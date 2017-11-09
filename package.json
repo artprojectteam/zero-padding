@@ -10,7 +10,7 @@
     "build": "NODE_ENV=development npm-run-all -p _rollup",
     "release": "NODE_ENV=production npm-run-all -p _rollup",
     "serve": "browser-sync start --config bs-config.js",
-    "test": "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=text mocha test/index.spec.js",
+    "test": "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=text mocha",
     "prebuild": "npm-run-all -s _lint",
     "prerelease": "npm-run-all -s _lint",
     "pretest": "rimraf coverage .nyc_output",
