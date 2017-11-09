@@ -1,13 +1,58 @@
 {
-  "presets": [
-    ["env", {
-      "targets": {
-        "browsers": ["last 2 versions", "safari >= 8", "ie 9"]
-      },
-      "loose": true,
-      "modules": false
-    }]
-  ],
-  "compact": "false",
-  "plugins": []
+  "plugins": [],
+  "env": {
+    "production": {
+      "presets": [
+        [
+          "env",
+          {
+            "targets": {
+              "browsers": [
+                "last 2 versions",
+                "safari >= 8",
+                "ie 9"
+              ]
+            },
+            "loose": true,
+            "modules": false
+          }
+        ]
+      ]
+    },
+    "development": {
+      "presets": [
+        [
+          "env",
+          {
+            "targets": {
+              "browsers": [
+                "last 2 versions",
+                "safari >= 8",
+                "ie 9"
+              ]
+            },
+            "loose": true,
+            "modules": false
+          }
+        ]
+      ]
+    },
+    "test": {
+      "presets": [
+        "babel-preset-power-assert",
+        [
+          "env",
+          {
+            "targets": {
+              "node": "current"
+            }
+          }
+        ]
+      ],
+      "plugins": [
+        "istanbul"
+      ]
+    }
+  },
+  "compact": "false"
 }
