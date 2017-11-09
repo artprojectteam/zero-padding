@@ -36,4 +36,11 @@ describe('ZeroPadding', () => {
     const res = ZeroPadding(0, 5)
     assert.equal(res, '00000')
   })
+
+  it('Error Test', () => {
+    assert.throws(() => {
+      const res = ZeroPadding('abc11', 5)
+      assert.equal(res, '00011')
+    }, 'Error')
+  })
 })
