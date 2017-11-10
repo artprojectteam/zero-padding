@@ -1,0 +1,131 @@
+<!doctype html>
+<html id="html">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta name="google" content="notranslate">
+  <title>Zero Padding</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css">
+  <style>
+    html {
+      font-size: 10px;
+    }
+
+    body {
+      font: 1.8rem/1 'helvetica Neue', sans-serif;
+    }
+
+    .inner-pd {
+      padding: 2rem;
+    }
+
+    .header {
+      background: #eeeeee;
+    }
+
+    .header-title {
+      margin: 0;
+      padding: 1rem 0;
+    }
+
+    .footer {
+      background: #000000;
+      color: #ffffff;
+    }
+
+    .footer-copy {
+      font-size: 1.2rem;
+    }
+
+    .main {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+
+    .calc {
+      margin-bottom: 3em;
+    }
+
+    .calc-input {
+      margin-bottom: 2em;
+    }
+
+    .input, .btn {
+      height: 40px;
+      box-sizing: border-box;
+    }
+
+    .input {
+      padding: 0 0.5em;
+      border: 1px solid #cccccc;
+      box-shadow: 1px 2px 6px #dedede;
+      text-align: right;
+    }
+
+    .input-digit {
+      width: 4em;
+      text-align: right;
+    }
+
+    .btn {
+      padding: 0 1em;
+      cursor: pointer;
+      border: none;
+      box-shadow: 1px 2px 6px #c0c0c0;
+      background: #61ac57;
+      color: #ffffff;
+    }
+
+    .result {
+      word-break: break-all;
+    }
+
+    .res {
+      font-size: 3rem;
+      color: #cc0000;
+    }
+
+  </style>
+</head>
+<body>
+
+<header class="header inner-pd">
+  <h1 class="header-title">Zero Padding</h1>
+</header>
+
+<article class="main inner-pd">
+  <div class="calc">
+    <div class="calc-input">
+      数値：<input type="number" id="num" class="input input-num" value="100">
+    </div>
+    <div class="calc-input">
+      ゼロ埋め後の桁数：<input type="number" id="digit" class="input input-digit" value="5" min="1">
+    </div>
+
+    <button id="btn" class="btn" type="button">ゼロ埋めする</button>
+  </div>
+
+  <div class="result">結果： <span id="res" class="res"></span></div>
+</article>
+
+
+<footer class="footer inner-pd">
+  <small class="footer-copy">&copy; Nobuyuki Kondo.</small>
+</footer>
+
+<script src="zero-padding.js"></script>
+<script>
+  var num = document.getElementById('num')
+  var digit = document.getElementById('digit')
+  var res = document.getElementById('res')
+
+  document.getElementById('btn').addEventListener('click', function () {
+    var _num = Math.floor(num.value)
+    var _digit = Math.floor(digit.value)
+
+    res.textContent = ZeroPadding(_num, _digit)
+  }, false)
+</script>
+</body>
+</html>
