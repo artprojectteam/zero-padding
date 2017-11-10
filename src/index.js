@@ -1,5 +1,5 @@
 /**
- * @param {number} num - integer
+ * @param {number} num - number you want to zero padding in
  * @param {number} digit - include digit number of zero padding
  * @return {string}
  */
