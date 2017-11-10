@@ -43,50 +43,49 @@
       padding-bottom: 6rem;
     }
 
-    .container {
+    .calc {
       margin-bottom: 3em;
     }
 
-    .container:last-child {
-      margin-bottom: 0;
+    .calc-input {
+      margin-bottom: 2em;
     }
 
-    .container-title {
-      margin: 0 0 1em;
-      font-size: 3rem;
-    }
-
-    .container-input {
-      margin-bottom: 1em;
+    .input, .btn {
+      height: 40px;
+      box-sizing: border-box;
     }
 
     .input {
       padding: 0 0.5em;
-      box-sizing: border-box;
-      height: 40px;
       border: 1px solid #cccccc;
       box-shadow: 1px 2px 6px #dedede;
+      text-align: right;
+    }
+
+    .input-digit {
+      width: 4em;
+      text-align: right;
     }
 
     .btn {
-      cursor: pointer;
-      height: 40px;
-      background: #ffffff;
-      border: none;
-      margin-left: 0.6em;
       padding: 0 1em;
+      cursor: pointer;
+      border: none;
       box-shadow: 1px 2px 6px #c0c0c0;
-    }
-
-    .btn-save {
       background: #61ac57;
       color: #ffffff;
     }
 
-    .btn-del {
-      background: #da6662;
-      color: #ffffff;
+    .result {
+      word-break: break-all;
     }
+
+    .res {
+      font-size: 3rem;
+      color: #cc0000;
+    }
+
   </style>
 </head>
 <body>
@@ -95,8 +94,20 @@
   <h1 class="header-title">Zero Padding</h1>
 </header>
 
-<main class="main inner-pd">
-</main>
+<article class="main inner-pd">
+  <div class="calc">
+    <div class="calc-input">
+      数値：<input type="number" id="num" class="input input-num" value="100">
+    </div>
+    <div class="calc-input">
+      ゼロ埋め後の桁数：<input type="number" id="digit" class="input input-digit" value="5" min="1">
+    </div>
+
+    <button id="btn" class="btn" type="button">ゼロ埋めする</button>
+  </div>
+
+  <div class="result">結果： <span id="res" class="res"></span></div>
+</article>
 
 
 <footer class="footer inner-pd">
@@ -105,6 +116,16 @@
 
 <script src="zero-padding.js"></script>
 <script>
+  var num = document.getElementById('num')
+  var digit = document.getElementById('digit')
+  var res = document.getElementById('res')
+
+  document.getElementById('btn').addEventListener('click', function () {
+    var _num = Math.floor(num.value)
+    var _digit = Math.floor(digit.value)
+
+    res.textContent = ZeroPadding(_num, _digit)
+  }, false)
 </script>
 </body>
 </html>
