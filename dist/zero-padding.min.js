@@ -1,5 +1,5 @@
 /*!
-Zero-Padding v0.0.1
+Zero-Padding v1.0.0
 Zero padding for number at JavaScript
 Copyright (c) 2017 Nobuyuki Kondo
 License: MIT
