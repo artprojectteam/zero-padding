@@ -1,7 +1,7 @@
 {
   "name": "zero-padding",
   "title": "Zero-Padding",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Zero padding for number at JavaScript",
   "main": "dist/zero-padding.js",
   "uglify": "dist/zero-padding.min.js",
